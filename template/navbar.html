@@ -1,0 +1,43 @@
+<nav class="navbar navbar-dark bg-dark" width=>
+    <header class="header">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="header_content d-flex flex-row align-items-center justify-content-start">
+						<div class="header_content_inner d-flex flex-row align-items-end justify-content-start">
+							<nav class="main_nav">
+								<ul class="d-flex flex-row align-items-start justify-content-start">
+                                    <div class="logo"><a href=""><h1><b>A B COLLEGE</h1></b></a></div>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <nav class="main_nav">
+								        <ul class="d-flex flex-row align-items-start justify-content-start">
+                                            {% if user.is_authenticated %}
+                                            <li><b>{{user.username}}</b></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								        	<li><a href="{% url 'schoolweb:logout' %}">Logout</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								    	    {% else %}
+                                             <li><a href="{% url 'schoolweb:register' %}">Register</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+			    					    	<li><a href="{% url 'schoolweb:login' %}">Login</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+				    				    	{% endif %}
+                                            <li class="nav-item dropdown active"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <b>Course</b>
+                                            </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li><a class="dropdown-item" href="https://en.m.wikipedia.org/wiki/Bachelor_of_Science">BSC</a></li>
+					                        <li><a class="dropdown-item" href="https://en.m.wikipedia.org/wiki/Bachelor_of_Arts">BA</a></li>
+                                            <li><a class="dropdown-item" href="https://en.m.wikipedia.org/wiki/Bachelor_of_Commerce">B.Com</a></li>
+                                        </ul></li>
+                                        </ul>
+                                    </nav>
+
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</nav>
